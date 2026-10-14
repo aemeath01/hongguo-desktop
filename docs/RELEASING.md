@@ -50,7 +50,7 @@ npm run release:package
 1. 检查 Git 暂存区，确保没有 `data/`、`work/`、`releases/`、`runtime/`、签名私钥、原后端或本机配置。使用已确认的发布身份提交并推送。
 2. 建立对应版本标签与草稿 Release，上传上述五个文件。
 3. 核对上传后的大小和 SHA-256、更新索引 URL、版本及签名，再发布 Release 并设为最新稳定版。
-4. 从公开地址重新下载 `latest.json` 与安装包，验证签名与哈希。
+4. 执行 `node scripts/verify-release.mjs --public`，从公开地址重新下载 `latest.json` 与安装包，验证签名与哈希。不带 `--public` 可核对草稿的五项 GitHub 资产。
 5. 使用隔离测试数据验证旧版本检查、下载及安装，不能只凭“构建成功”声称整个更新链路已验证。
 
 更新入口固定为：
