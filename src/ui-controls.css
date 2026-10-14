@@ -1,0 +1,45 @@
+/* Menus and hints share one material and one focus treatment across the app. */
+:root{--popover:var(--surface);--popover-shadow:0 12px 36px #00000016,0 2px 6px #00000008}
+:root[data-theme=dark]{--popover:#25252b;--popover-shadow:0 16px 40px #0005,0 2px 8px #0003}
+html{scrollbar-gutter:stable}
+.desktop-shell{display:contents}
+button{user-select:none}
+button:focus-visible,[role=combobox]:focus-visible{outline:2px solid color-mix(in srgb,var(--red) 80%,transparent);outline-offset:3px}
+button:disabled{cursor:not-allowed}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb:hover{background:var(--muted)}
+::-webkit-scrollbar-corner{background:transparent}
+.select-menu{position:relative;flex-shrink:0;text-align:left}
+.select-trigger{display:flex;align-items:center;justify-content:space-between;gap:9px;min-height:34px;min-width:122px;padding:0 11px;border:1px solid var(--line);border-radius:7px;background:var(--surface);color:var(--subtle);font-size:11px;white-space:nowrap}
+.select-trigger>span{flex:1;text-align:left}
+.select-trigger:hover{color:var(--text);background:var(--raised)}
+.select-trigger[aria-expanded=true]{border-color:color-mix(in srgb,var(--red) 55%,var(--line));color:var(--text);background:var(--raised)}
+.select-trigger:active:not(:disabled){transform:none}
+.select-chevron{color:var(--muted);transition:transform .18s ease}
+.select-trigger[aria-expanded=true]>.select-chevron{transform:rotate(180deg);color:var(--text)}
+.select-popover{position:absolute;z-index:65;right:0;top:calc(100% + 7px);min-width:max(100%,160px);max-width:calc(100vw - 32px);border:1px solid var(--line);border-radius:10px;background:var(--popover);box-shadow:var(--popover-shadow);padding:5px;transform-origin:top right}
+.select-popover[data-side=top]{top:auto;bottom:calc(100% + 7px);transform-origin:bottom right}
+.select-popover ul{position:relative;padding:0;margin:0;list-style:none;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.select-popover li{display:flex;align-items:center;justify-content:space-between;gap:22px;min-height:38px;padding:8px 10px;color:var(--subtle);border-radius:6px;font-size:12px;line-height:20px;white-space:nowrap;cursor:pointer;user-select:none}
+.select-popover li.active{background:var(--raised);color:var(--text)}
+.select-popover li[aria-selected=true]{color:var(--red);font-weight:550}
+.select-popover li[aria-selected=true].active{background:var(--red-soft)}
+.explore-filter-row .sort-menu{margin-top:0;align-self:flex-start}
+.episode-group-picker{display:flex;align-items:center;gap:10px;font-size:11px;color:var(--subtle)}
+.episode-group-picker .select-trigger{min-width:125px}
+.ui-tooltip-anchor{position:fixed;z-index:140;padding:0}
+.ui-tooltip-anchor:before{content:"";position:absolute;inset:-10px}
+.ui-tooltip{position:relative;max-width:min(280px,calc(100vw - 24px));padding:9px 13px;border-radius:8px;background:var(--popover);color:var(--text);border:1px solid var(--line);box-shadow:var(--popover-shadow);font-size:12px;font-weight:500;line-height:1.6;overflow-wrap:anywhere;user-select:none}
+.search-input:focus-within{border-bottom-color:color-mix(in srgb,var(--red) 60%,var(--line))}
+.search-input .clear-search{background:var(--raised);color:var(--subtle);border-radius:50%;width:26px;height:26px;padding:0;align-items:center;justify-content:center;flex-shrink:0}
+.search-input .clear-search:hover{color:var(--text);background:var(--line)}
+.detail-modal,.search-dialog{scroll-margin-block:24px}
+.detail-episodes-heading{gap:15px;flex-wrap:wrap}
+.theater .theater-icon{min-width:34px;min-height:34px}
+.theater{color-scheme:dark;--line:#38383f}
+.theater-groups{position:relative;scrollbar-width:thin;scrollbar-color:var(--line) transparent}
+.theater-episode-grid>button.selected{color:#fff}
+@media(max-width:760px){.explore-filter-row .sort-menu{align-self:flex-end}.select-trigger{font-size:11px}.episode-group-picker>span{font-size:10px}}
+@media(max-width:480px){.episode-group-picker{gap:7px}.episode-group-picker .select-trigger{min-width:112px}.search-input{padding-inline:16px;gap:9px}.search-input input{font-size:14px}.search-input .clear-search{width:23px;height:23px}}
+@media(prefers-reduced-motion:reduce){.select-chevron,button,input{transition:none}}
+@media(prefers-contrast:more){.select-trigger,.select-popover,.ui-tooltip{border-color:var(--text)}.select-popover li.active{outline:1px solid var(--text);outline-offset:-1px}}

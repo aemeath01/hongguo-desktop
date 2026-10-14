@@ -1,0 +1,25 @@
+name: 问题反馈
+description: 报告无法播放、界面或更新问题
+body:
+  - type: markdown
+    attributes:
+      value: 请先更新到最新版本。不要上传密码、密钥、完整播放地址或个人观看记录。
+  - type: input
+    id: version
+    attributes:
+      label: 软件版本与 Windows 版本
+      placeholder: 例如 0.1.9 / Windows 11 x64
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤、预期结果与实际结果
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: 诊断摘要（选填）
+      description: 从“关于与反馈”生成后，检查内容再粘贴。
+      render: text

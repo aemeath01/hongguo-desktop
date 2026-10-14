@@ -1,0 +1,19 @@
+.desktop-toolbar:has(.window-controls){padding-right:10px;gap:18px}
+.desktop-toolbar:has(.window-controls) .desktop-search{margin-left:auto;max-width:32vw}
+.window-controls{display:flex;align-items:center;gap:3px;flex-shrink:0;padding-left:12px;border-left:1px solid var(--line);user-select:none}
+.window-controls>button{width:36px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px;color:var(--subtle);padding:0;background:transparent;border:0;cursor:default;transition:background .15s,color .15s}
+.window-controls>button:hover{background:var(--surface);color:var(--text)}
+.window-controls>.window-close:hover{background:#e54856;color:#fff}
+.window-controls>button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.player-heading:has(.window-controls){padding-right:10px;gap:12px}
+.player-heading .window-controls{border-color:#ffffff16;color:#ccc}
+.player-heading .window-controls>button{color:#bbb;padding:0}
+.player-heading .window-controls>button:hover{background:#ffffff12;color:white}
+.player-heading .window-controls>.window-close:hover{background:#e54856}
+.mini-player .player-heading .window-controls{padding-left:4px;gap:0}
+.window-controls.compact>button{width:28px;height:28px}
+[data-tauri-drag-region]{user-select:none}
+@media(max-width:960px){.desktop-toolbar:has(.window-controls){gap:12px}.desktop-toolbar:has(.window-controls) .desktop-search{width:210px}.window-controls{padding-left:8px}.window-controls>button{width:32px}}
+@media(prefers-reduced-motion:reduce){.window-controls>button{transition:none}}
+
+.toolbar-drag-fill{position:absolute;inset:0;z-index:-1}

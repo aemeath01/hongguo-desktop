@@ -1,0 +1,38 @@
+{
+  "name": "hongguo-desktop",
+  "version": "0.1.9",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 1420 --strictPort",
+    "build": "vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 1420 --strictPort",
+    "desktop:dev": "tauri dev",
+    "desktop:build": "tauri build",
+    "setup:mpv": "node scripts/fetch-mpv.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "desktop:build:local": "node scripts/build-release.mjs --local",
+    "release:build": "node scripts/build-release.mjs",
+    "release:package": "node scripts/package-release.mjs",
+    "licenses": "node scripts/collect-licenses.mjs"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "^2.12.3",
+    "@tauri-apps/plugin-process": "^2.4.0",
+    "@tauri-apps/plugin-updater": "^2.13.3",
+    "lucide-react": "^0.468.0",
+    "motion": "^14.1.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.12.2",
+    "vite": "^7.0.0"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/aemeath01/hongguo-desktop",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aemeath01/hongguo-desktop.git"
+  }
+}

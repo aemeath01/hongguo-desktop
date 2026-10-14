@@ -1,0 +1,106 @@
+/* The frame takes each source image's exact ratio: no crop, stretch, or letterbox. */
+.poster-surface{display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;border-radius:9px}
+.poster-surface img,.portrait-card .open-title>img{width:100%;height:auto;max-height:100%;object-fit:contain;object-position:center;transform:none;transition:none}
+.portrait-card .open-title{width:100%;height:100%;aspect-ratio:auto;display:flex;align-items:center;justify-content:center;border-radius:inherit;background:transparent;overflow:hidden}
+.title-track{align-items:flex-start}
+.browse-grid{align-items:start}
+.open-title:hover>img{transform:none}
+.open-title:active{transform:none!important}
+.portrait-card .artwork-vignette{background:linear-gradient(180deg,#0003,transparent 19%,transparent 78%,#0002);pointer-events:none}
+.title-track{position:relative;scroll-snap-type:none;scroll-behavior:auto;touch-action:pan-y pinch-zoom;cursor:grab;user-select:none;padding-top:13px;padding-bottom:17px}
+.title-track.is-dragging,.title-track.is-dragging *{cursor:grabbing!important}
+.title-track:focus-visible{outline:1px solid var(--red);outline-offset:-4px}
+.title-track>.portrait-card{flex:0 0 calc((100vw - var(--content-pad)*2 - 75px)/5.65)}
+.title-card{scroll-snap-align:none}
+.title-artwork{transform-origin:50% 65%}
+.title-artwork:focus-within{z-index:3}
+.title-artwork:focus-within .card-bookmark{opacity:1}
+.poster-surface:has(.open-title:focus-visible){outline:2px solid var(--red);outline-offset:4px}
+.card-name{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;white-space:normal;min-height:38px;font-size:12px;font-weight:550;line-height:1.6;margin-top:12px}
+.card-caption{margin-top:5px}
+.portrait-card .card-episode{top:9px;right:9px;left:auto;bottom:auto;padding:4px 6px;color:#fff;background:#12121685;backdrop-filter:blur(8px);border-radius:4px;font-size:9px;line-height:1.3}
+.card-bookmark{top:auto;bottom:10px;right:10px;width:30px;height:30px}
+.artwork-play,.open-title:hover .artwork-play,.open-title:focus-visible .artwork-play{translate:-50% -50%;transform:none;transition:none}
+.save-symbol{position:relative;display:flex;align-items:center;justify-content:center;width:19px;height:20px}
+.row-heading{margin-bottom:3px}
+.collection-row{margin-bottom:26px}
+.browse-grid{position:relative;grid-template-columns:repeat(6,minmax(0,1fr));gap:28px 20px}
+.browse-grid>.title-card{min-width:0}
+
+/* A full poster is the foreground; its soft color field only supplies ambience. */
+.cinematic-hero{height:clamp(425px,36vw,600px);padding:104px var(--content-pad) 62px;overflow:clip;align-items:center}
+.hero-ambience{position:absolute;inset:-90px -60px -90px 35%;z-index:-2;background-size:cover;background-position:center;filter:blur(80px) saturate(.65);pointer-events:none}
+.hero-ambience:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg),var(--hero-left-trans) 40%,var(--hero-left-trans))}
+.hero-story-stage{width:48%;position:relative;z-index:2}
+.hero-story{max-width:none;padding-top:0}
+.hero-story h1{font-size:clamp(32px,3.7vw,59px);max-width:540px}
+.hero-story h1.historical-title{font-size:clamp(55px,6vw,89px)}
+.hero-genre{margin-bottom:16px}
+.hero-metadata{margin-top:17px}
+.hero-story>p{font-size:12px;margin-top:16px;max-width:400px;line-height:1.95}
+.hero-story .cinema-actions{margin-top:23px}
+.hero-poster-stage{position:absolute;top:98px;bottom:50px;right:17%;width:23%;max-width:315px}
+.hero-poster-holder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.hero-poster{height:100%;max-width:100%;box-shadow:0 18px 55px #0003}
+.hero-poster>button{display:flex;align-items:center;justify-content:center;padding:0;width:100%;height:100%;border-radius:inherit}
+.hero-poster>button:active{transform:none}
+.hero-poster-stage{container-type:size}
+.hero-poster.poster-surface{width:auto;height:auto;max-width:100%;max-height:100%;background:transparent}
+.hero-poster>button{display:block;width:auto;height:auto}
+.hero-poster>button>img{width:auto;height:auto;max-width:100cqw;max-height:100cqh}
+.feature-selector{right:var(--content-pad);bottom:auto;top:50%;translate:0 -30%;flex-direction:column;gap:12px}
+.feature-selector>button{height:auto!important;width:44px;border:0;overflow:visible;opacity:.48;background:transparent;transition:opacity .2s;box-shadow:none;border-radius:4px;display:flex;align-items:center;justify-content:center}
+.feature-selector>button>img{height:auto;width:100%;max-height:100%;object-fit:contain;border-radius:4px}
+.feature-selector>button>span:not(.feature-ring){display:none}
+.feature-selector>button.selected{transform:none;border:0;opacity:1}
+.feature-selector>button>.feature-ring{position:absolute;inset:-4px;border:1.5px solid var(--hero-text);border-radius:7px;pointer-events:none;background:none;padding:0}
+.home-collections{margin-top:-14px}
+
+/* Shared selection marks follow the latest target, including rapid reversals. */
+.selection-fill{position:absolute;inset:0;border-radius:inherit;pointer-events:none}
+.stream-header nav>button.active:after,.my-tabs>button.selected:after{display:none}
+.nav-marker{position:absolute;height:3px;left:1px;right:1px;bottom:15px;border-radius:3px;background:var(--red);pointer-events:none}
+.appearance-switch>button{position:relative;isolation:isolate}
+.appearance-switch>button.selected{background:none;box-shadow:none}
+.appearance-switch .selection-fill{background:var(--surface);box-shadow:0 1px 5px #0001;z-index:-1}
+.browse-filters>button{position:relative;isolation:isolate}
+.browse-filters>button.selected{background:none;border-color:transparent}
+.browse-filters .selection-fill{background:var(--text);z-index:-1;inset:-1px}
+.tab-underline{position:absolute;bottom:-1px;left:0;right:0;height:2px;background:var(--red);pointer-events:none}
+.feedback-toast{translate:-50% 0;transform:none;z-index:110}
+body,.detail-modal,.search-dialog,.poster-surface,.stream-footer{transition:background-color .28s,color .28s,border-color .28s}
+
+/* Detail keeps the same poster geometry as the source card. */
+.detail-modal{overflow:visible}
+.detail-cinema{height:auto;min-height:365px;display:flex;gap:30px;padding:35px 37px 25px;overflow:hidden;border-radius:12px 12px 0 0}
+.detail-ambience{position:absolute;inset:-80px;z-index:-2;background-size:cover;background-position:center;filter:blur(75px);opacity:.1}
+.detail-poster{width:210px;flex:0 0 210px;align-self:flex-start;box-shadow:0 10px 35px #0002}
+.detail-headline{position:relative;left:auto;right:auto;bottom:auto;padding-top:10px;flex:1;min-width:0;align-self:center}
+.detail-headline h2{font-size:29px;line-height:1.45;margin:9px 0 15px;padding-right:13px;text-wrap:balance}
+.detail-synopsis{font-size:12px;color:var(--subtle);line-height:1.95;margin-top:17px}
+.detail-preview-note{font-size:10px;color:var(--muted);margin-top:15px}
+.detail-headline .cinema-actions{margin-top:21px}
+.detail-content{padding-top:0;border-radius:0 0 12px 12px;background:var(--bg)}
+.detail-category-list{display:flex;flex-wrap:wrap;gap:7px}
+.detail-category-list>span{font-size:10px;padding:5px 9px;border-radius:5px;background:var(--raised);color:var(--subtle)}
+.detail-episodes-heading{margin-top:23px;padding-top:22px}
+.search-results{position:relative}
+.search-result>img,.theater-drama>img{object-fit:contain;height:auto;align-self:flex-start;flex-shrink:0}
+.theater-body{position:relative}
+.vertical-screen>img{object-fit:contain}
+.theater-episodes{position:relative}
+.theater-groups>button,.theater-episode-grid>button{position:relative;isolation:isolate}
+.theater-groups>button.selected,.theater-episode-grid>button.selected{background:transparent}
+.theater-groups .selection-fill{background:#ffffff15;z-index:-1}
+.theater-episode-grid .selection-fill{background:#ec4255;z-index:-1}
+.theater-episode-grid>button>span:not(.selection-fill){display:flex;align-items:center;justify-content:center;gap:5px}
+.playback-step>span{position:relative;display:flex;align-items:center;gap:4px}
+.playback-step b{position:relative;display:inline-block;min-width:15px;text-align:center;font-weight:500}
+
+@media(min-width:1550px){.title-track>.portrait-card{flex-basis:calc((100vw - var(--content-pad)*2 - 105px)/7.4)}.browse-grid{grid-template-columns:repeat(8,minmax(0,1fr))}.card-name{font-size:14px;min-height:44px}.card-caption{font-size:11px}.hero-poster-stage{right:19%;width:27%}.feature-selector>button{height:78px;width:52px}}
+@media(max-width:1100px){.hero-poster-stage{right:17%;width:24%}.browse-grid{grid-template-columns:repeat(5,minmax(0,1fr))}}
+@media(max-width:760px){.cinematic-hero{height:510px;padding-top:130px}.hero-story-stage{width:54%}.hero-story{max-width:none}.hero-story h1{font-size:32px}.hero-story h1.historical-title{font-size:54px}.hero-story>p{font-size:11px}.hero-poster-stage{top:145px;bottom:90px;right:10%;width:28%}.feature-selector{top:auto;bottom:30px;right:10%;translate:none;flex-direction:row;gap:9px}.feature-selector>button{height:42px;width:29px}.title-track>.portrait-card{flex-basis:calc((100vw - var(--content-pad)*2 - 40px)/3.7)}.browse-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 15px}.card-bookmark{opacity:1}.detail-cinema{padding:32px 24px 24px;gap:24px;min-height:300px}.detail-poster{flex-basis:170px;width:170px}.detail-headline h2{font-size:23px}.detail-content{padding-left:24px;padding-right:24px}.detail-synopsis{font-size:11px}.detail-headline .watch-button{padding:0 16px;font-size:11px}.detail-preview-note{font-size:9px}.hero-story .cinema-actions{gap:8px}.hero-story .watch-button,.hero-story .more-button{padding:0 13px;font-size:11px}}
+@media(max-width:480px){.cinematic-hero{height:auto;min-height:655px;display:block;padding:380px 20px 36px}.hero-story-stage{width:100%}.hero-story{max-width:none}.hero-poster-stage{top:124px;bottom:auto;height:227px;left:50%;right:auto;translate:-50% 0;width:152px}.hero-poster{width:100%;height:100%}.hero-story h1{font-size:29px}.hero-story h1.historical-title{font-size:47px}.hero-genre{font-size:10px;margin-bottom:13px}.hero-story>p{font-size:11px;max-width:none;margin-top:13px}.hero-metadata{margin-top:15px}.hero-story .cinema-actions{margin-top:19px}.feature-selector{top:151px;right:24px;bottom:auto;flex-direction:column;gap:13px}.feature-selector>button{width:29px;height:43px}.hero-ambience{inset:-40px}.home-collections{margin-top:0}.title-track>.portrait-card{flex-basis:39vw}.row-heading{margin-bottom:1px}.browse-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:24px 11px}.portrait-card .card-episode{top:7px;right:6px;font-size:8px;padding:3px 4px}.card-bookmark{top:auto;bottom:7px;right:7px;width:27px;height:27px}.card-name{min-height:35px;font-size:11px}.card-caption{font-size:9px}.detail-cinema{padding:52px 20px 23px;gap:19px;min-height:0;align-items:flex-start;flex-wrap:wrap}.detail-poster{width:113px;flex:0 0 113px}.detail-headline{padding-top:0;min-width:0;align-self:flex-start;flex:1}.detail-headline h2{font-size:20px;margin-top:7px;padding:0}.story-meta{font-size:9px;gap:8px}.detail-synopsis{font-size:10px;margin-top:12px;line-height:1.8}.detail-headline .cinema-actions{flex-wrap:wrap;gap:8px;margin-top:15px}.detail-headline .watch-button{font-size:10px;height:34px;padding:0 10px;gap:6px}.detail-headline .round-button{width:33px;height:33px}.detail-preview-note{font-size:8px;line-height:1.7}.detail-content{padding:0 20px 27px}.detail-category-list{gap:5px}.detail-category-list>span{font-size:9px}.nav-marker{bottom:5px;height:2px}.detail-modal{border-radius:10px}}
+@media(prefers-reduced-transparency:reduce){.stream-header.header-solid{background:var(--bg);backdrop-filter:none}.dialog-shade{background:#000e;backdrop-filter:none}.appearance-switch,.more-button,.round-button{backdrop-filter:none;background:var(--raised)}.card-bookmark,.card-episode{backdrop-filter:none}.hero-ambience,.ambient-poster,.detail-ambience{display:none}}
+@media(prefers-contrast:more){.card-caption,.detail-preview-note,.hero-story>p,.stream-footer{color:var(--text)}.poster-surface{outline:1px solid var(--line)}.nav-marker{height:4px}.selection-fill{outline:1px solid currentColor}}
+@media(prefers-reduced-motion:reduce){.title-artwork{transform:none!important}.hero-ambience{filter:blur(70px)}body,.detail-modal,.search-dialog,.poster-surface{transition:none}.feature-selector>button{transition:none}}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="380" viewBox="0 0 1280 380" role="img" aria-labelledby="title desc">
+<title id="title">红果免费短剧</title><desc id="desc">界面示意：暗色桌面窗口、竖版封面与播放控制，非真实剧集截图。</desc>
+<defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#17171f"/><stop offset="1" stop-color="#25202b"/></linearGradient><linearGradient id="red" x2="1" y2="1"><stop stop-color="#ff6980"/><stop offset="1" stop-color="#d91d48"/></linearGradient><linearGradient id="card" x2="1" y2="1"><stop stop-color="#7c617b"/><stop offset="1" stop-color="#2f324f"/></linearGradient></defs>
+<rect width="1280" height="380" rx="28" fill="url(#bg)"/><circle cx="1070" cy="40" r="240" fill="#ed405f" opacity=".06"/>
+<rect x="64" y="62" width="58" height="58" rx="18" fill="url(#red)"/><path d="m87 77 20 14-20 14Z" fill="white"/>
+<text x="64" y="183" fill="#faf8fc" font-family="Segoe UI,Microsoft YaHei,sans-serif" font-size="47" font-weight="700">红果免费短剧</text>
+<text x="66" y="228" fill="#b5b0c2" font-family="Segoe UI,Microsoft YaHei,sans-serif" font-size="20">每个故事，都值得入戏。</text>
+<rect x="65" y="270" width="102" height="32" rx="16" fill="#ffffff" fill-opacity=".06"/><text x="116" y="291" fill="#d8d5e0" text-anchor="middle" font-family="Segoe UI,sans-serif" font-size="12">WINDOWS</text>
+<text x="184" y="291" fill="#9d96ac" font-family="Segoe UI,Microsoft YaHei,sans-serif" font-size="14">轻巧桌面 · 原生播放 · 自由定制</text>
+<rect x="660" y="50" width="550" height="288" rx="16" fill="#101116" stroke="#ffffff" stroke-opacity=".12"/><rect x="660" y="50" width="66" height="288" rx="16" fill="#20212a"/>
+<circle cx="693" cy="81" r="12" fill="#ee405e"/><path d="m690 76 7 5-7 5Z" fill="white"/>
+<g fill="#727484"><rect x="684" y="123" width="18" height="3" rx="1"/><rect x="684" y="151" width="18" height="3" rx="1"/><rect x="684" y="179" width="18" height="3" rx="1"/><rect x="684" y="295" width="18" height="3" rx="1"/></g>
+<text x="750" y="88" fill="#e9e6ef" font-family="Microsoft YaHei,sans-serif" font-size="16">把喜欢的故事，放进你的剧场。</text>
+<g fill="url(#card)"><rect x="750" y="108" width="103" height="147" rx="8"/><rect x="867" y="108" width="103" height="147" rx="8"/><rect x="984" y="108" width="103" height="147" rx="8"/></g>
+<path d="m750 227 47-78 56 106H750Zm117 28 66-128 37 128Zm117-11 46-101 57 112H984Z" fill="#dbb6a2" opacity=".25"/><rect x="1102" y="108" width="82" height="147" rx="8" fill="#24232e"/>
+<g stroke="#5c596b" stroke-width="4" stroke-linecap="round"><path d="M1118 130h48M1118 148h30M1118 185h48M1118 203h36"/></g>
+<path d="m754 284 13 8-13 8Z" fill="#ed4965"/><path d="M785 292h398" stroke="#353440" stroke-width="3" stroke-linecap="round"/><path d="M785 292h136" stroke="#ed4965" stroke-width="3" stroke-linecap="round"/><circle cx="922" cy="292" r="4" fill="#fbe8eb"/>
+</svg>

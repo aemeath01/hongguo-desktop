@@ -1,0 +1,20 @@
+.search-kind-tabs{display:flex;align-items:center;gap:7px;padding:14px 24px;border-bottom:1px solid var(--line)}
+.search-kind-tabs button{border-radius:7px;padding:7px 12px;font-size:12px;color:var(--subtle);transition:background .2s,color .2s}
+.search-kind-tabs button:hover{background:var(--raised);color:var(--text)}
+.search-kind-tabs button.selected{background:color-mix(in srgb,var(--accent,#ff4562) 12%,transparent);color:var(--accent,#ff4562)}
+.search-kind-tabs>span{margin-left:auto;font-size:10px;color:var(--muted)}
+.search-result-status{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--subtle);padding:4px 8px 14px;min-height:28px}
+.search-error{display:flex;align-items:center;gap:12px;margin:0 8px 12px;padding:10px 12px;border-radius:7px;background:var(--raised);font-size:11px;line-height:1.8;color:var(--subtle)}
+.search-error>span{flex:1}.search-error>button{flex-shrink:0;color:var(--text);padding:5px 9px;border:1px solid var(--line);border-radius:6px}
+.search-load-more{display:block;margin:15px auto 6px;padding:10px 24px;border:1px solid var(--line);border-radius:8px;font-size:12px;background:var(--raised);color:var(--text)}
+.search-load-more:disabled{opacity:.55;cursor:wait}.search-end{text-align:center;color:var(--muted)}
+.season-load-more{margin-top:9px;padding:6px 10px;border:1px solid #ffffff17;border-radius:6px;font-size:10px;color:#dedee6;background:#ffffff06}
+.season-load-more:hover{background:#ffffff10}.season-search-summary:has(.season-load-more){padding-bottom:11px}
+.search-empty-content{max-height:65vh;overflow-y:auto;overscroll-behavior:contain}
+.search-history{padding:24px 25px 0}.search-history header{display:flex;align-items:center;justify-content:space-between;margin-bottom:15px}
+.search-history h3{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:var(--subtle);margin:0}
+.search-history header>button{display:flex;align-items:center;gap:5px;font-size:11px;color:var(--muted);padding:5px 7px;border-radius:5px}.search-history header>button:hover{color:var(--red);background:var(--raised)}
+.search-history-list{display:flex;flex-wrap:wrap;gap:8px}.search-history-chip{display:flex;align-items:center;max-width:100%;border:1px solid var(--line);border-radius:8px;background:var(--raised);overflow:hidden}
+.search-history-term{padding:8px 5px 8px 11px;font-size:12px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;min-width:0;color:var(--text)}
+.search-history-remove{padding:8px 9px 8px 6px;display:flex;flex-shrink:0;color:var(--muted)}.search-history-term:hover,.search-history-remove:hover{color:var(--red)}
+.search-history-error{padding:0 25px;font-size:11px;color:var(--red)}.search-history+.search-suggestions{margin-top:22px;border-top:1px solid var(--line)}

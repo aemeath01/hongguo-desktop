@@ -1,0 +1,54 @@
+/* A compact editorial feature: story, full poster, and an actionable programme. */
+.desktop-app .cinematic-hero{margin:24px var(--content-pad) 30px;padding:28px 28px 54px;height:370px;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(150px,23%) minmax(170px,23%);gap:26px;border:1px solid var(--line);border-radius:16px;background:var(--surface);overflow:hidden;align-items:center}
+.desktop-app .hero-story-stage{width:100%;min-width:0}
+.desktop-app .hero-story h1{font-family:inherit;font-size:clamp(25px,2.65vw,45px);line-height:1.3;font-weight:750;letter-spacing:-.5px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;text-wrap:pretty}
+.desktop-app .hero-genre{font-size:11px;letter-spacing:.8px;margin-bottom:14px;color:var(--subtle)}
+.desktop-app .hero-metadata{margin-top:15px;gap:10px;flex-wrap:wrap;color:var(--subtle)}
+.desktop-app .hero-metadata b{color:var(--red)}
+.desktop-app .hero-story>p{font-size:12px;line-height:1.9;margin-top:14px;max-width:440px;color:var(--subtle);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.desktop-app .hero-story .cinema-actions{margin-top:21px;flex-wrap:wrap}
+.desktop-app .hero-story .watch-button{background:var(--red);color:white}
+.desktop-app .hero-story .more-button{background:var(--glass);color:var(--text);backdrop-filter:none}
+.desktop-app .hero-poster-stage{position:relative;inset:auto;translate:none;width:100%;height:285px;max-width:none;min-width:0}
+.desktop-app .hero-poster{box-shadow:0 12px 32px #0003}
+.desktop-app .hero-ambience{inset:-90px 5% -90px 20%;filter:blur(65px) saturate(.8);opacity:.36}
+.desktop-app .hero-ambience:after{background:linear-gradient(90deg,var(--surface),transparent 60%)}
+.desktop-app .feature-selector{position:static;inset:auto;translate:none;width:100%;gap:8px;flex-direction:column;min-width:0;align-self:center}
+.feature-selector-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:11px;font-weight:600;margin:0 2px 4px;color:var(--subtle)}
+.feature-selector-heading>span{font-size:8px;letter-spacing:1px;color:var(--muted);font-weight:400}
+.desktop-app .feature-selector>button{display:flex;align-items:center;justify-content:flex-start;width:100%;height:auto!important;min-height:76px;padding:9px;gap:10px;opacity:1;border:1px solid transparent;background:transparent;border-radius:9px;text-align:left;box-shadow:none;overflow:hidden;position:relative;transition:background-color .2s,border-color .2s}
+.desktop-app .feature-selector>button:hover{background:var(--glass)}
+.desktop-app .feature-selector>button.selected{border:1px solid color-mix(in srgb,var(--red) 35%,transparent);background:color-mix(in srgb,var(--surface) 78%,transparent)}
+.desktop-app .feature-selector>button>img{width:38px;height:auto;max-height:62px;object-fit:contain;flex-shrink:0;border-radius:4px}
+.desktop-app .feature-selector>button>span{position:static;inset:auto;background:none;padding:0;white-space:normal;color:var(--text);display:block;min-width:0;line-height:1.6}
+.feature-option-copy{flex:1}
+.feature-option-copy small{display:block;font-size:9px;color:var(--muted);margin-bottom:4px}
+.feature-option-copy strong{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:11px;font-weight:550}
+.desktop-app .feature-selector .feature-option-index{font-size:9px;color:var(--muted);font-variant-numeric:tabular-nums;align-self:flex-start}
+.desktop-app .feature-selector .selected .feature-option-index{color:var(--red)}
+.desktop-app .carousel-controls{bottom:18px;left:28px}
+.desktop-app .home-collections{margin-top:0}
+.desktop-app .collection-row{margin-bottom:30px}
+.card-genre{font-size:9px;font-weight:500;color:var(--subtle);padding-right:7px;margin-right:7px;border-right:1px solid var(--line)}
+.home-section-break{margin:18px var(--content-pad) 28px;padding-top:24px;border-top:1px solid var(--line);display:flex;align-items:baseline;gap:14px}
+.home-section-break>span{font-weight:600;font-size:13px}.home-section-break>p{font-size:10px;color:var(--muted)}
+.home-empty-row{margin:0 var(--content-pad) 30px;padding:20px 24px;background:var(--surface);border:1px solid var(--line);border-radius:10px}.home-empty-row h2{font-size:20px}.home-empty-row p{font-size:12px;color:var(--subtle);margin:12px 0}.home-empty-row button{padding:9px 13px;border-radius:6px;background:var(--raised);font-size:12px}
+
+/* The number remains centred even when its play affordance appears. */
+.modal-episodes{grid-template-columns:repeat(8,minmax(0,1fr));gap:8px}
+.modal-episodes>button{position:relative;height:34px;padding:0;gap:0;border:1px solid transparent;border-radius:6px;line-height:1;display:grid;place-items:center}
+.modal-episodes>button>svg{position:absolute;left:8px;top:50%;transform:translateY(-50%);width:10px;pointer-events:none}
+.modal-episodes>button>span{display:block;text-align:center;font-variant-numeric:tabular-nums;line-height:1}
+.modal-episodes>button:hover,.modal-episodes>button:focus-visible{background:var(--red-soft);color:var(--red);border-color:color-mix(in srgb,var(--red) 30%,transparent)}
+
+/* Both directions reveal the incoming theme from the control, in 700 ms. */
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}::view-transition-new(root){z-index:2}
+::view-transition-group(root){animation-duration:0s}
+::view-transition,::view-transition-group(root),::view-transition-image-pair(root),::view-transition-old(root),::view-transition-new(root){pointer-events:none}
+.theme-rippling *{transition-property:transform,opacity,box-shadow!important}
+
+@media(min-width:1600px){.desktop-app .cinematic-hero{height:400px;grid-template-columns:minmax(0,1fr) minmax(230px,26%) minmax(210px,24%);gap:36px;padding:30px 36px 52px}.desktop-app .hero-poster-stage{height:315px}.desktop-app .hero-story>p{font-size:13px}.desktop-app .feature-selector>button{padding:12px;min-height:84px}.feature-option-copy strong{font-size:12px}.desktop-app .carousel-controls{left:36px}}
+@media(max-width:1120px){.desktop-app .cinematic-hero{height:auto;grid-template-columns:minmax(0,1fr) 34%;padding:24px 24px 54px;gap:20px}.desktop-app .hero-poster-stage{height:260px}.desktop-app .feature-selector{grid-column:1/-1;flex-direction:row;gap:8px}.feature-selector-heading{display:none}.desktop-app .feature-selector>button{min-height:62px;gap:7px;padding:7px;flex:1}.desktop-app .feature-selector>button>img{width:29px;max-height:46px}.feature-option-copy small{font-size:8px}.feature-option-copy strong{font-size:10px}.desktop-app .feature-selector .feature-option-index{display:none}.desktop-app .carousel-controls{left:24px}}
+@media(max-width:680px){.desktop-app .cinematic-hero{margin-top:16px;padding:20px 18px 48px;gap:15px;grid-template-columns:minmax(0,1fr) 32%;border-radius:12px}.desktop-app .hero-story h1{font-size:25px}.desktop-app .hero-poster-stage{height:210px}.desktop-app .hero-story>p{-webkit-line-clamp:2;font-size:10px}.desktop-app .hero-metadata{font-size:9px;gap:7px}.desktop-app .hero-story .more-button{display:none}.desktop-app .hero-genre{font-size:9px}.desktop-app .feature-selector>button>img{display:none}.desktop-app .feature-selector>button{min-height:58px}.desktop-app .carousel-controls{left:18px}.home-section-break{display:block}.home-section-break p{margin-top:8px}.modal-episodes{grid-template-columns:repeat(6,minmax(0,1fr))}.modal-episodes>button>svg{display:none}}
+@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}.desktop-app .feature-selector>button{transition:none}}

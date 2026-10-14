@@ -1,0 +1,67 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "红果免费短剧",
+  "version": "0.1.9",
+  "identifier": "app.hongguo.personal",
+  "plugins": {
+    "updater": {
+      "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IDM5QzgwRjhDOTAwMEExNkMKUldSc29RQ1FqQS9JT1NzT3REeTlrbVZ4c0k4S3RyamU2VlRESkplMllBOHkxOFdOVWtXTHFQODQK",
+      "endpoints": [
+        "https://github.com/aemeath01/hongguo-desktop/releases/latest/download/latest.json"
+      ]
+    }
+  },
+  "build": {
+    "beforeDevCommand": "npm run dev",
+    "devUrl": "http://127.0.0.1:1420",
+    "beforeBuildCommand": "npm run build",
+    "frontendDist": "../dist"
+  },
+  "app": {
+    "windows": [
+      {
+        "label": "main",
+        "title": "红果免费短剧",
+        "width": 1320,
+        "height": 860,
+        "minWidth": 800,
+        "minHeight": 580,
+        "center": true,
+        "create": false,
+        "decorations": false,
+        "shadow": true
+      }
+    ],
+    "security": {
+      "csp": "default-src 'self'; img-src 'self' asset: http://asset.localhost https: data:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'self' ipc: http://ipc.localhost; object-src 'none'; base-uri 'self'"
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": [
+      "nsis"
+    ],
+    "resources": {
+      "../native/": "native/",
+      "../LICENSE": "LICENSE",
+      "../THIRD-PARTY-NOTICES.md": "THIRD-PARTY-NOTICES.md",
+      "../docs/licenses/THIRD-PARTY.txt": "docs/licenses/THIRD-PARTY.txt"
+    },
+    "icon": [
+      "icons/icon.ico"
+    ],
+    "shortDescription": "红果免费短剧桌面播放器",
+    "windows": {
+      "nsis": {
+        "languages": [
+          "SimpChinese"
+        ],
+        "displayLanguageSelector": false
+      }
+    },
+    "publisher": "Aemeath",
+    "homepage": "https://github.com/aemeath01/hongguo-desktop",
+    "license": "MIT",
+    "createUpdaterArtifacts": true
+  }
+}
