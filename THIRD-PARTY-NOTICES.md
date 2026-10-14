@@ -6,7 +6,7 @@
 
 | 组件 | 用途 | 许可证 |
 | --- | --- | --- |
-| [Tauri 2](https://github.com/tauri-apps/tauri) 及插件 | Windows 窗口、更新、快捷键、对话框 | MIT / Apache-2.0 |
+| [Tauri 2](https://github.com/tauri-apps/tauri) 及插件 | Windows 窗口、更新、快捷键、对话框；Windows 安装模板改编自 `tauri-cli-v2.12.2`，用于隔离登记键及快捷方式 | MIT / Apache-2.0 |
 | [React](https://github.com/facebook/react) | 界面 | MIT |
 | [Motion](https://github.com/motiondivision/motion) | 动效 | MIT |
 | [Lucide](https://github.com/lucide-icons/lucide) | 图标 | ISC |

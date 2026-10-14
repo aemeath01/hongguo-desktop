@@ -53,6 +53,8 @@ npm run release:package
 4. 执行 `node scripts/verify-release.mjs --public`，从公开地址重新下载 `latest.json` 与安装包，验证签名与哈希。不带 `--public` 可核对草稿的五项 GitHub 资产。
 5. 使用隔离测试数据验证旧版本检查、下载及安装，不能只凭“构建成功”声称整个更新链路已验证。
 
+Windows 安装模板固定在 `src-tauri/installer/windows.nsi`，改编自 Tauri CLI v2.12.2。升级 Tauri CLI 时应同步审阅上游模板。卸载登记键使用应用 identifier，快捷方式使用 Aemeath 标识，不能改回仅按软件名称识别其他客户端。`Software/Aemeath/红果免费短剧` 仍用于恢复已有安装位置。
+
 更新入口固定为：
 
 ```text
